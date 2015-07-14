@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mendix App</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/progress.css">
+    </head>
+    <body dir="ltr">
+        <div id="content"></div>
+
+        <div id="mx-app">
+            <div id="mxalert" class="mx-alert">
+                <div class="mx-alert-header">
+                    <h4>Error</h4>
+                </div>
+                <div class="mx-alert-body">
+                    <p id="mxalert_message"></p>
+                </div>
+                <div class="mx-alert-footer">
+                    <button id="mxalert_button" type="button">OK</button>
+                </div>
+            </div>
+
+            <div id="loader">
+                <div class="meter animate">
+                    <span id="progressbar" style="width: 0"><span id="progresstext"></span></span>
+                </div>
+            </div>
+
+            <div id="splash-middle">
+		<img id="splash-loader" src="img/loader.gif"/>
+            </div>
+
+            <div id="splash-bottom">
+                <img id="splash-logo" src='img/logo_sunset.png'/>
+            </div>
+        </div>
+
+        <script src="cordova.js"></script>
+        <script src="js/bundle.js"></script>
+        <script>
+            // Make sure to include the scheme (e.g. http://) in the URL.
+            document.addEventListener("deviceready", function() {
+                mxapp.initialize("https://rws-landelijkinformatielijnprototype.mendixcloud.com");
+            });
+        </script>
+
+    </body>
+</html>
